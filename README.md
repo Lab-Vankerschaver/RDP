@@ -48,32 +48,3 @@ code →
 4. Classify with new trained model
 code →
 java -Xmx1g -jar /path/to/classifier.jar classify -t /path/to/DB/training_files/rRNAClassifier.properties -o output_classified.txt /path/to/DB/ready4train_seqs.fasta.
-
-------------------------------------------------------------
-if convergent evolution issues occur
- - use convergent_evolution_fix.py
- - list of convergent evolution taxons are needed
-
-byunsanensis	species	3
-alkaliphilum	species	2
-mediterraneus	species	4
-sedimenticola	genus	2
-gangjinensis	species	3
-fastidiosa	species	5
-
-revised file is saved on new_raw_taxonomy.txt
-
-code →
-python /path/to/convergent_evolution_fix.py /path/to/conevol.txt /path/to/raw_taxonomy.txt /path/to/new_raw_taxonomy.txt
-
--------------------------------------------------------------
-some paths:
-
-/home/ba3-project-9/rdp/prepro_jq/lineage2taxTrain.py
-/home/ba3-project-9/rdp/prepro_jq/addFullLineage.py
-
-/home/ba3-project-9/rdp/rdptools/classifier.jar
-
-16S-UDb csv - /home/ba3-project-9/data/curated_db/16S_UDB_MOTHUR/16S_UDb_dataset.csv
-EzBioCloud csv - /home/ba3-project-9/data/curated_db/EzBioCloud/EZBIO_dataset_OnlyBac.csv
-GRD csv - /home/ba3-project-9/data/curated_db/GRD/GRD_dataset.csv
