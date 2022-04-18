@@ -45,8 +45,8 @@ GATGAACG...
 
 code →
 - java -Xmx10g -jar /path/to/classifier.jar train -o /path/to/DB/training_files -s /path/to/DB/ready4train_seqs.fasta -t /path/to/DB/ready4train_taxonomy.txt
-- cp /path/to/DB/traing_files/rRNAClassifier.properties /path/to/training_files/
-  - rRNAClassifier.properties should be located in same folder with training_files
+
+Move rRNAClassifier.properties to training_files. rRNAClassifier.properties should be located in same folder with training_files.
 
 4. Classify with new trained model
 
