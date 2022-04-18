@@ -1,6 +1,7 @@
 how to train RDP classifier.
 
 1. make raw DB files to taxonomy and sequence file
+
 Taxonomy file should be tab delimited text file. Each line contains one species with 8 items: seq_ID, kingdom, phylum, ... , species.
 
 Seq_ID	Kingdom	Phylum	Class	Order	Family	Genus	Species
@@ -20,6 +21,7 @@ code →
 python /path/to/csv2taxseq.py /path/to/DB_dataset.csv /path/to/DB/raw_taxonomy.txt /path/to/DB/raw_sequences.fasta
 
 2. make input file for RDP
+
 code →
 - python /path/to/lineage2taxTrain.py /path/to/DB/raw_taxonomy.txt > /path/to/DB/ready4train_taxonomy.txt
 
@@ -40,11 +42,13 @@ GAGTTTGAT...
 GATGAACG...
 
 3. TRAIN
+
 code →
 - java -Xmx10g -jar /path/to/classifier.jar train -o /path/to/DB/training_files -s /path/to/DB/ready4train_seqs.fasta -t /path/to/DB/ready4train_taxonomy.txt
 - cp /path/to/DB/traing_files/rRNAClassifier.properties /path/to/training_files/
   - rRNAClassifier.properties should be located in same folder with training_files
 
 4. Classify with new trained model
+
 code →
 java -Xmx1g -jar /path/to/classifier.jar classify -t /path/to/DB/training_files/rRNAClassifier.properties -o output_classified.txt /path/to/DB/ready4train_seqs.fasta.
