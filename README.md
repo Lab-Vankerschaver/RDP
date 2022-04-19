@@ -1,3 +1,6 @@
+RDP classifier files installed.
+You can download it from https://github.com/rdpstaff/classifier
+
 how to train RDP classifier.
 
 1. make raw DB files to taxonomy and sequence file
